@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Weather App</title>
+<link rel="stylesheet" type="text/css" href="./Style.css" />
+</head>
+<body>
+	<div id="heading">
+		<h1>
+			<u>Weather Data</u>
+		</h1>
+	</div>
+	<div class="container">
+		<div class="searchContainer">
+			<input type="text" placeholder="Enter City Name" id="location"
+				required> <img alt="search-icon" src="images/icon.jpg"
+				id="search"
+				style="height: 13%; width: 13%; border-radius: 50%; border: 1px solid black;" />
+		</div>
+		<div class="temp-container">
+			<div id="condition"><img alt="weather-icon" src="images/unknown.png"
+				style="height: 45%; width: 45%;"></div>
+			<h1 id="temperature">22°C</h1>
+			<h2 id="place">New York</h2>
+			<p id="description">Rainy</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="ShowData.js"></script>
+</html>

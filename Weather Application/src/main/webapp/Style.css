@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+#heading h1 {
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	margin: 35%;
+	margin-top: 35px;
+	padding: 40px;
+	justify-content: space-between;
+	flex-direction: column;
+	background-image: linear-gradient(to bottom right, lightblue, green);
+}
+
+.searchContainer {
+	padding: 40px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.searchContainer input {
+	width: 80%;
+	height: 40px;
+	border-radius: 5%;
+}
+
+.temp-container {
+	margin-top: 10px;
+	padding-left: 35%;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+}
