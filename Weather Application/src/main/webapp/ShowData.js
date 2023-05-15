@@ -11,24 +11,30 @@ var temperature = document.getElementById("temperature");
 var place = document.getElementById("place");
 var description = document.getElementById("description");
 
+var lastLocation = "";
+
 function showData() {
 	var location = document.getElementById("location").value;
 	if (location != "") {
-		url = url + location + "&appid=" + apikey;
+		if (location.toLowerCase() == lastLocation.toLowerCase()) {
+			return;
+		}
+		var newUrl = url + location + "&appid=" + apikey;
 
-		fetchData(url).then((data) => {
+		fetchData(newUrl).then((data) => {
 			weather = data;
 			console.log(weather);
 			condition.innerHTML = `<img src="images/${weather.weather[0].icon}.png"/>`;
 			temperature.innerHTML = weather.main.temp;
 			place.innerHTML = weather.name + ', ' + weather.sys.country;
 			description.innerHTML = weather.weather[0].description;
-			description.style.color = "black";
+			description.style.color = "white";
+			lastLocation = location;
 		}).catch((error) => {
 			condition.innerHTML = `<img src="images/unknown.png"/>`;
 			temperature.innerHTML = "";
 			place.innerHTML = "";
-			description.innerHTML = "*place is Not Mentioned";
+			description.innerHTML = "*place is Not Available";
 			description.style.color = "red";
 		});
 
